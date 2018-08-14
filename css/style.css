@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  font-family: Helvetica, Tahoma, sans-serif;
+  background: #f3f3f3;
+}
+
+header {
+  background: #fff;
+  height: 60px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+#wrapper {
+  width: 90%;
+  margin: auto;
+}
+
+#controls, #output {
+  padding: 8px;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.control-btn {
+  padding: 10px;
+  border: none;
+  background: #e3e3e3;
+  font-weight: bold;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.control-btn:hover {
+  box-shadow: 2px 2px 3px 1px #333;
+}
+
+.control-input {
+  padding: 5px;
+  margin: 5px;
+  background: #e3e3e3;
+  border: 1px solid #333;
+  display: block;
+  width: 90%;
+}
+
+#output-view {
+  border: 1px solid black;
+}
+
+#output-view ul{
+  list-style-type: none;
+  padding-left: 15px;
+  text-align: left;
+}
+
+#output-view ul li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  max-width: 95%;
+}
+
+#output-view ul li span {
+  width: 25%;
+}
+
+#output-view ul li p {
+  display: inline-block;
+  vertical-align: super;
+  font-size: 1.1em;
+  width: 50%;
+}
+
+/* UL ICONS */
+.uncomplete {
+  background-image: url(../images/circle-regular.svg);
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.complete {
+  background-image: url(../images/check-circle-solid.svg);
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.delete {
+  background-image: url(../images/check-circle-solid.svg);
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* temporary fix */
+img {
+  width: 10%;
+}
