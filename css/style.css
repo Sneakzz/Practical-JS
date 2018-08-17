@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   box-sizing: border-box;
 }
@@ -10,6 +11,7 @@ body {
   background: #f3f3f3;
 }
 
+/* Header Styling */
 header {
   background: #fff;
   height: 60px;
@@ -23,11 +25,13 @@ header h1 {
   margin: 0;
 }
 
+/* Wrapper for containing content (changes depending on device width) */
 #wrapper {
   width: 90%;
   margin: auto;
 }
 
+/* Controls Styling (most of this will be removed later) */
 #controls, #output {
   padding: 8px;
   background: #fff;
@@ -58,6 +62,7 @@ header h1 {
   width: 90%;
 }
 
+/* Output Styling */
 #output-view {
   border: 1px solid black;
 }
@@ -74,45 +79,40 @@ header h1 {
 }
 
 #output-view ul li span {
-  width: 25%;
+  margin: 0 5%;
+  vertical-align: middle;
+}
+
+#output-view ul li span.uncomplete:hover {
+  background-image: url(../images/check-circle-solid.svg);
+  transition: 500ms;
 }
 
 #output-view ul li p {
   display: inline-block;
-  vertical-align: super;
+  vertical-align: middle;
   font-size: 1.1em;
-  width: 50%;
+  text-align: left;
+  width: 65%;
 }
 
-/* UL ICONS */
-.uncomplete {
-  background-image: url(../images/circle-regular.svg);
+/* UL Icons Styling */
+.icon {
   width: 25px;
   height: 25px;
   display: inline-block;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.uncomplete {
+  background-image: url(../images/circle-regular.svg);
 }
 
 .complete {
   background-image: url(../images/check-circle-solid.svg);
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .delete {
-  background-image: url(../images/check-circle-solid.svg);
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-/* temporary fix */
-img {
-  width: 10%;
+  background-image: url(../images/times-circle-solid.svg);
 }
