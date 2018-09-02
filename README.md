@@ -15,15 +15,21 @@ During this course, we create a todo-list web application that grows in function
 * Chrome debugger: using the built-in chrome debugger to find problems and see exactly how things work. Also learned about the different options and functionality inside the debugger.
 * this: learned about and using the keyword "this". Also understanding how it works and behaves in different situations.
 
+
+### Goals Achieved for the project
+
+* Recreated a minimalistic simple UI
+* Changed the old way of adding, completing, deleting and changing todo's
+
 ### Current goals for the project
 
-As this project has a very minimalistic UI at the end of this course, i've decided to create a new UI for it with pure HTML5 and CSS3.
+* Add local storage features to store todo's over multiple days
+* Think of more features to add!
 
-To fully utilise this new UI, i plan on modifying features and/or adding features to this project such as:
+### Here's a picture!!
 
-* Changing the way to add todo's
-* Changing the way of completing and deleting todo's
-* Changing the way of modifying existing todo's
+![image](https://user-images.githubusercontent.com/32787307/44961086-53c94300-af0b-11e8-91ca-db6497b397a5.png)
+
 
 ### About the course:
 
