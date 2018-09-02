@@ -14,19 +14,80 @@ body {
 /* Header Styling */
 header {
   background: #fff;
-  height: 60px;
   margin-bottom: 15px;
+}
+
+/* header:after {
+  display: block;
+  content: "";
+  clear: both;
+} */
+
+header .wrapper {
+  height: 60px;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-header h1 {
+header nav {
+  height: 30px;
+  width: 30px;
+  background-image: url(../images/bars-solid.svg);
+  background-repeat: no-repeat;
+}
+
+header nav ul {
+  height: 100%;
+  width: 0; /* 225px expanded */
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  background: #111;
+  overflow: hidden;
+  list-style-type: none;
+  transition: 0.3s;
+}
+
+header nav ul li.closeNav {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 36px;
+}
+
+header nav ul li.closeNav:hover {
+  cursor: pointer;
+  transform: rotateX(360deg);
+  transition: 0.5s;
+}
+
+header nav ul li {
+  color: #fff;
+  padding: 8px 8px 8px 32px;
+  font-size: 25px;
+  display: block;
+}
+
+header #title {
+  margin: 0 auto;
+}
+
+header #title h1 {
   margin: 0;
 }
 
+header #add {
+  height: 30px;
+  width: 30px;
+  background-image: url(../images/plus-square-regular.svg);
+  background-repeat: no-repeat;
+}
+
 /* Wrapper for containing content (changes depending on device width) */
-#wrapper {
+.wrapper {
   width: 90%;
   margin: auto;
 }
