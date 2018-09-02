@@ -83,17 +83,17 @@ header h1 {
   vertical-align: middle;
 }
 
-#output-view ul li span.uncomplete:hover {
-  background-image: url(../images/check-circle-solid.svg);
-  transition: 500ms;
-}
-
 #output-view ul li p {
   display: inline-block;
   vertical-align: middle;
   font-size: 1.1em;
   text-align: left;
   width: 65%;
+}
+
+/* Text styling for completed todos */
+#output-view ul li p.done{
+  text-decoration: line-through;
 }
 
 /* UL Icons Styling */
@@ -109,10 +109,22 @@ header h1 {
   background-image: url(../images/circle-regular.svg);
 }
 
+.uncomplete:hover{
+  background-image: url(../images/check-circle-solid.svg);
+  transition: 400ms;
+  cursor: pointer;
+}
+
 .complete {
   background-image: url(../images/check-circle-solid.svg);
 }
 
 .delete {
   background-image: url(../images/times-circle-solid.svg);
+}
+
+.delete:hover{
+  background-image: url(../images/times-circle-solid-hover.svg);
+  transition: 400ms;
+  cursor: pointer;
 }
