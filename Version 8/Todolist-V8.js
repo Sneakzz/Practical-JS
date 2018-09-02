@@ -67,29 +67,51 @@ var handlers = {
   toggleAll: function() {
     todoList.toggleAll();
     view.displayTodos();
+  },
+  showNav: function(e) {
+    let nav = document.querySelector('#navigation ul');
+    nav.style.width = "225px";
+  },
+  hideNav: function(e) {
+    let nav = document.querySelector('#navigation ul');
+    nav.style.width = "0";
+    // e.stopPropagation halts the click event bubbling over to the navigation
+    e.stopPropagation();
   }
 };
 
+document.querySelector('#navigation').addEventListener('click',handlers.showNav);
+document.querySelector('.closeNav').addEventListener('click', handlers.hideNav);
+
 var view = {
   displayTodos: function() {
-    var todosUl = document.querySelector('ul');
+    var todosUl = document.querySelector('#output-view ul');
     todosUl.innerHTML = '';
 
     // this // refers to the view object
     // forEach(callback, this);
     todoList.todos.forEach(function(todo, position) {
       var todoLi = document.createElement('li');
-      var todoTextWithCompletion = '';
+      todoLi.setAttribute('id', position)
+
+      var todoSpan1 = document.createElement('span');
+      todoSpan1.setAttribute('class', 'icon');
+
+      var todoSpan2 = document.createElement('span');
+      todoSpan2.setAttribute('class', 'icon delete');
+
+      var todoP = document.createElement('p');
+      todoP.innerHTML = todo.todoText;
 
       if (todo.completed === true) {
-        todoTextWithCompletion = '(x) ' + todo.todoText;
+        todoSpan1.classList.add('complete');
       } else {
-        todoTextWithCompletion = '( ) ' + todo.todoText;
+        todoSpan1.classList.add('uncomplete');
       }
 
-      todoLi.id = position;
-      todoLi.textContent = todoTextWithCompletion;
-      todoLi.appendChild(this.createDeleteButton());
+      todoLi.appendChild(todoSpan1);
+      todoLi.appendChild(todoP);
+      todoLi.appendChild(todoSpan2);
       todosUl.appendChild(todoLi);
     }, this);
   },
