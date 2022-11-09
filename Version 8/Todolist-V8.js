@@ -107,11 +107,12 @@ var view = {
     var todosUl = document.querySelector('#output-view ul');
     todosUl.innerHTML = '';
 
+    let btnToggleAll = document.querySelector("#btn-toggleAll");
     // Extra check if there are actually todos to display or not. If not, hide the button that toggles all todos
     if (todoList.todos.length < 1) {
-      let btnToggleAll = document.querySelector("#btn-toggleAll");
       btnToggleAll.classList.add("hidden");
     } else {
+      btnToggleAll.classList.remove("hidden");
 
       // this // refers to the view object
       // forEach(callback, this);
