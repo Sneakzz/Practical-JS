@@ -107,32 +107,41 @@ var view = {
     var todosUl = document.querySelector('#output-view ul');
     todosUl.innerHTML = '';
 
-    // this // refers to the view object
-    // forEach(callback, this);
-    todoList.todos.forEach(function(todo, position) {
-      var todoLi = document.createElement('li');
-      todoLi.setAttribute('id', position)
+    // Extra check if there are actually todos to display or not. If not, hide the button that toggles all todos
+    if (todoList.todos.length < 1) {
+      let btnToggleAll = document.querySelector("#btn-toggleAll");
+      btnToggleAll.classList.add("hidden");
+    } else {
 
-      var todoSpan1 = document.createElement('span');
-      todoSpan1.setAttribute('class', 'icon');
+      // this // refers to the view object
+      // forEach(callback, this);
+      todoList.todos.forEach(function(todo, position) {
+        var todoLi = document.createElement('li');
+        todoLi.setAttribute('id', position)
 
-      var todoSpan2 = document.createElement('span');
-      todoSpan2.setAttribute('class', 'icon delete');
+        var todoSpan1 = document.createElement('span');
+        todoSpan1.setAttribute('class', 'icon');
 
-      var todoP = document.createElement('p');
-      todoP.innerHTML = todo.todoText;
+        var todoSpan2 = document.createElement('span');
+        todoSpan2.setAttribute('class', 'icon delete');
 
-      if (todo.completed === true) {
-        todoSpan1.classList.add('complete');
-        todoP.setAttribute('class', 'done');
-      } else {
-        todoSpan1.classList.add('uncomplete');
-      }
+        var todoP = document.createElement('p');
+        todoP.innerHTML = todo.todoText;
 
-      todoLi.appendChild(todoSpan1);
-      todoLi.appendChild(todoP);
-      todoLi.appendChild(todoSpan2);
-      todosUl.appendChild(todoLi);
-    }, this);
+        if (todo.completed === true) {
+          todoSpan1.classList.add('complete');
+          todoP.setAttribute('class', 'done');
+        } else {
+          todoSpan1.classList.add('uncomplete');
+        }
+
+        todoLi.appendChild(todoSpan1);
+        todoLi.appendChild(todoP);
+        todoLi.appendChild(todoSpan2);
+        todosUl.appendChild(todoLi);
+      }, this);
+    }
   }
 };
+
+view.displayTodos();
